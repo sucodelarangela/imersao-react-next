@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import config from '../config.json';
 import styled from 'styled-components';
 
@@ -9,6 +10,10 @@ function HomePage() {
   const mensagem = "Bem vindo ao AluraTube";
   return (
     <>
+      <Head>
+        <title>AluraTube</title>
+        <meta property="og:image" content="/og-image.png" />
+      </Head>
       <CSSReset />
       <div>
         <Menu />
@@ -71,7 +76,7 @@ function Timeline(props) {
             <div>
               {videos.map(video => {
                 return (
-                  <a href={video.url} key={video.title}>
+                  <a href={video.url} key={video.title} target="_blank">
                     <img src={video.thumbnail} />
                     <span>
                       {video.title}
