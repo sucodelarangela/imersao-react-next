@@ -1,6 +1,8 @@
+<div id='top'>
+
 # AluraTube | Imersão React / Next.js (em andamento)
 
-<div id='top'></div>
+</div>
 
 _[Read it in English](#English)_
 
