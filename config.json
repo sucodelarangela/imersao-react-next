@@ -1,5 +1,133 @@
 {
   "name": "Angela Caldas (sucodelarangela)",
   "job": "Desenvolvedora Front End",
-  "github": "sucodelarangela"
+  "github": "sucodelarangela",
+  "playlists": {
+    "Xcom: Enemy Unknown": [
+      {
+        "title": "XCOM: Enemy Within - Operation Crimson Hymn",
+        "url": "https://www.youtube.com/watch?v=-HSin-Wi-GU",
+        "thumbnail": "https://i.ytimg.com/vi/-HSin-Wi-GU/hqdefault.jpg"
+      },
+      {
+        "title": "XCOM: Enemy Within - Operation Lazy Flame",
+        "url": "https://www.youtube.com/watch?v=3KQqLAiUuHs",
+        "thumbnail": "https://i.ytimg.com/vi/3KQqLAiUuHs/hqdefault.jpg"
+      },
+      {
+        "title": "XCOM: Enemy Within - Operation Morbid Shield",
+        "url": "https://www.youtube.com/watch?v=WyfElGbcC1U",
+        "thumbnail": "https://i.ytimg.com/vi/WyfElGbcC1U/hqdefault.jpg"
+      },
+      {
+        "title": "XCOM: Enemy Within - Operation Hidden Giant",
+        "url": "https://www.youtube.com/watch?v=qPns1V-63ac",
+        "thumbnail": "https://i.ytimg.com/vi/qPns1V-63ac/hqdefault.jpg"
+      },
+      {
+        "title": "XCOM: Enemy Within - Operation First Dawn",
+        "url": "https://www.youtube.com/watch?v=gnOH5Gq5RPo",
+        "thumbnail": "https://i.ytimg.com/vi/gnOH5Gq5RPo/hqdefault.jpg"
+      },
+      {
+        "title": "XCOM: Enemy Within - Operation Lazy Tears",
+        "url": "https://www.youtube.com/watch?v=mP6I8Ad9Owo",
+        "thumbnail": "https://i.ytimg.com/vi/mP6I8Ad9Owo/hqdefault.jpg"
+      },
+      {
+        "title": "XCOM: Enemy Within - Operation Cryptic Serpent",
+        "url": "https://www.youtube.com/watch?v=RnGQfnXF0nQ",
+        "thumbnail": "https://i.ytimg.com/vi/RnGQfnXF0nQ/hqdefault.jpg"
+      },
+      {
+        "title": "XCOM: Enemy Within - Operation Brutal Summer",
+        "url": "https://www.youtube.com/watch?v=9MOJQMg6yTY",
+        "thumbnail": "https://i.ytimg.com/vi/9MOJQMg6yTY/hqdefault.jpg"
+      }
+    ],
+    "Front-End (React)": [
+      {
+        "title": "useRef: como funciona esse React Hook | #AluraMais",
+        "url": "https://www.youtube.com/watch?v=BwRxBGsT_f0",
+        "thumbnail": "https://i.ytimg.com/vi/BwRxBGsT_f0/hqdefault.jpg"
+      },
+      {
+        "title": "Hook useCallback x useMemo: performance no React | #AluraMais",
+        "url": "https://www.youtube.com/watch?v=VVmGrEZoBvM",
+        "thumbnail": "https://i.ytimg.com/vi/VVmGrEZoBvM/hqdefault.jpg"
+      },
+      {
+        "title": "Como começar a estruturar um projeto React? com NextJS, Styled Components",
+        "url": "https://www.youtube.com/watch?v=mJK5oGixSYo",
+        "thumbnail": "https://i.ytimg.com/vi/mJK5oGixSYo/hqdefault.jpg"
+      },
+      {
+        "title": "Full Modern React Tutorial (Playlist)",
+        "url": "https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d",
+        "thumbnail": "https://i.ytimg.com/vi/j942wKiXFu8/hqdefault.jpg"
+      },
+      {
+        "title": "Se Você Passar Por Esses 5 Desafios, Você Aprendeu React JS",
+        "url": "https://www.youtube.com/watch?v=aJR7f45dBNs",
+        "thumbnail": "https://i.ytimg.com/vi/aJR7f45dBNs/hqdefault.jpg"
+      },
+      {
+        "title": "Register and Login Page Tutorial | ReactJs, NodeJS, MySQL (Beginner)",
+        "url": "https://www.youtube.com/watch?v=W-sZo6Gtx_E",
+        "thumbnail": "https://i.ytimg.com/vi/W-sZo6Gtx_E/hqdefault.jpg"
+      },
+      {
+        "title": "TUDO que você deve estudar de JavaScript antes do React",
+        "url": "https://www.youtube.com/watch?v=37SwqREHRGI",
+        "thumbnail": "https://i.ytimg.com/vi/37SwqREHRGI/hq720.jpg"
+      },
+      {
+        "title": "ViteJS vs Create React App (CRA)",
+        "url": "https://www.youtube.com/watch?v=pOf3lsHuDl4",
+        "thumbnail": "https://i.ytimg.com/vi/pOf3lsHuDl4/hq720.jpg"
+      }
+    ],
+    "Aquarismo": [
+      {
+        "title": "Shallow Planted Aquarium - Emersed Aquascape",
+        "url": "https://www.youtube.com/watch?v=f9hUWHiOXaQ",
+        "thumbnail": "https://i.ytimg.com/vi/f9hUWHiOXaQ/hqdefault.jpg"
+      },
+      {
+        "title": "Shallow Tank - Nano Aquascape for Betta fish",
+        "url": "https://www.youtube.com/watch?v=F4YxBbl9R9g",
+        "thumbnail": "https://i.ytimg.com/vi/F4YxBbl9R9g/hqdefault.jpg"
+      },
+      {
+        "title": "Building a BRAZILIAN-STYLE Contest Aquascape | PART 1: - Layout and Hardscape - Aquascaping Tutorial",
+        "url": "https://www.youtube.com/watch?v=G-tnA1P-_xM",
+        "thumbnail": "https://i.ytimg.com/vi/G-tnA1P-_xM/hqdefault.jpg"
+      },
+      {
+        "title": "Building a BRAZILIAN-STYLE Contest Aquascape | PART 2: Planting - Aquascaping Tutorial",
+        "url": "https://www.youtube.com/watch?v=Q6Gl6e8Debg",
+        "thumbnail": "https://i.ytimg.com/vi/Q6Gl6e8Debg/hqdefault.jpg"
+      },
+      {
+        "title": "Maintenance On A New Planted Aquarium - The First 2 Months - Step by Step Tutorial",
+        "url": "https://www.youtube.com/watch?v=ogoc0PQspWY",
+        "thumbnail": "https://i.ytimg.com/vi/ogoc0PQspWY/hqdefault.jpg"
+      },
+      {
+        "title": "ALGAE GUIDE V.2 TUTORIAL - MISS ALGAE UNIVERSE CONTEST",
+        "url": "https://www.youtube.com/watch?v=5QRBGn65sbE",
+        "thumbnail": "https://i.ytimg.com/vi/5QRBGn65sbE/hqdefault.jpg"
+      },
+      {
+        "title": "How to Get Rid of Aquarium Algae​ | Causes, Different Types, & Algae Eaters",
+        "url": "https://www.youtube.com/watch?v=4c4MoOD-zpI",
+        "thumbnail": "https://i.ytimg.com/vi/4c4MoOD-zpI/hqdefault.jpg"
+      },
+      {
+        "title": "Planted Aquarium With Betta Fish Family",
+        "url": "https://www.youtube.com/watch?v=HkHY7RGZldc",
+        "thumbnail": "https://i.ytimg.com/vi/HkHY7RGZldc/hqdefault.jpg"
+      }
+    ]
+  }
 }
