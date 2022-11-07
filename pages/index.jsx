@@ -26,7 +26,7 @@ const StyledHeader = styled.header`
     width: 100%;
     height: auto;
     min-height: 200px;
-    max-height: 30vw;
+    max-height: 25vw;
     object-fit: cover;
     margin-top: 50px;
   }
