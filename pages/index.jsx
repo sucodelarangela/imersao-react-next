@@ -7,7 +7,6 @@ import Menu from '../src/components/Menu';
 import { StyledTimeline } from '../src/components/Timeline';
 
 function HomePage() {
-  const mensagem = "Bem vindo ao AluraTube";
   return (
     <>
       <Head>
@@ -54,7 +53,7 @@ function Header() {
     <StyledHeader>
       <img className='banner' src="/banner.png" alt="" aria-hidden='true' />
       <section className='user-info'>
-        <img class="user-avatar" src={`https://github.com/${config.github}.png`} alt="Avatar Angela Caldas" />
+        <img className="user-avatar" src={`https://github.com/${config.github}.png`} alt="Avatar Angela Caldas" />
         <div>
           <h2>{config.name}</h2>
           <p>{config.job}</p>
