@@ -27,7 +27,7 @@ const StyledMenu = styled.header`
 `;
 
 const StyledSwitch = styled(Switch.Root)`
-  width: 50px;
+  min-width: 50px;
   height: 26px;
   background-color: #333333;
   border-radius: 26px;
