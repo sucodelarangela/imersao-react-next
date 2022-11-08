@@ -51,10 +51,18 @@ const StyledHeader = styled.header`
   }
 `;
 
+const StyledBanner = styled.div`
+  background: url(${config.bg}) center;
+  background-size: cover;
+  min-height: 230px;
+  height: 25vw;
+`;
+
 function Header() {
   return (
     <StyledHeader>
-      <img className='banner' src="/banner.png" alt="" aria-hidden='true' />
+      <StyledBanner />
+      {/* <img className='banner' src="/banner.png" alt="" aria-hidden='true' /> */}
       <section className='user-info'>
         <img className="user-avatar" src={`https://github.com/${config.github}.png`} alt="Avatar Angela Caldas" />
         <div>
