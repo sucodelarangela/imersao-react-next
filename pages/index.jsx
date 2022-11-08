@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { useState } from 'react';
 import config from '../config.json';
 import styled from 'styled-components';
 
@@ -7,6 +8,8 @@ import Menu from '../src/components/Menu';
 import { StyledTimeline } from '../src/components/Timeline';
 
 function HomePage() {
+  const [filterValue, setFilterValue] = useState('');
+
   return (
     <>
       <Head>
@@ -15,9 +18,9 @@ function HomePage() {
       </Head>
       <CSSReset />
       <div>
-        <Menu />
+        <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
         <Header />
-        <Timeline playlists={config.playlists}>
+        <Timeline searchValue={filterValue} playlists={config.playlists}>
           Conteúdo
         </Timeline>
       </div>
@@ -63,8 +66,9 @@ function Header() {
   );
 }
 
-function Timeline(props) {
+function Timeline({ searchValue, ...props }) {
   const playlistNames = Object.keys(props.playlists);
+
   return (
     <StyledTimeline>
       {playlistNames.map((playlistName) => {
@@ -73,15 +77,21 @@ function Timeline(props) {
           <section key={playlistName}>
             <h2>{playlistName}</h2>
             <div>
-              {videos.map(video => {
-                return (
-                  <a href={video.url} key={video.title} target="_blank">
-                    <img src={video.thumbnail} />
-                    <span>
-                      {video.title}
-                    </span>
-                  </a>);
-              })};
+              {
+                videos.filter((video) => {
+                  const titleNormalized = video.title.toLowerCase();
+                  const searchValueNormalized = searchValue.toLowerCase();
+                  return titleNormalized.includes(searchValueNormalized);
+                }).map(video => {
+                  return (
+                    <a href={video.url} key={video.title} target="_blank">
+                      <img src={video.thumbnail} />
+                      <span>
+                        {video.title}
+                      </span>
+                    </a>
+                  );
+                })}
             </div>
           </section>
         );
