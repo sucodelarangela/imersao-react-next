@@ -11,12 +11,12 @@ O **AluraTube** é uma plataforma clone do YouTube onde iremos colocar nossos v�
 Esse projeto está sendo desenvolvido em uma imersão da [**Alura**](https://www.alura.com.br) voltada para iniciantes em React com foco em Next.js. O projeto está sendo desenvolvido sob a orientação do instrutor [Mario Souto](https://github.com/omariosouto) com participação da desenvolvedora [Nayanne Lopes](https://github.com/NayanneBatista) e do CEO da Alura, [Paulo Silveira](https://github.com/peas).
 
 <!-- prettier-ignore -->
-| 🪧 Vitrine. Dev | |
-| -------------- | --- |
-| ✨ Nome        | **AluraTube** |
-| 🏷️ Tecnologias | React, Next.js, Styled-Components |
-| 🚀 URL         | [Clique para acessar](https://aluratube-next-js.vercel.app/) |
-| 🔥 Desafio      | [Design no Figma](https://www.figma.com/file/3ryManadSVXjYYdva3orGD/Aluratube-(Copy)?node-id=5%3A2) |
+| 🪧 Vitrine. Dev |                                                                                                    |
+| -------------- | -------------------------------------------------------------------------------------------------- |
+| ✨ Nome        | **AluraTube**                                                                                      |
+| 🏷️ Tecnologias | React, Next, Styled-Components                                                                     |
+| 🚀 URL         | [https://aluratube-next-js.vercel.app/](https://aluratube-next-js.vercel.app/)                     |
+| 🔥 Desafio     | [Design no Figma](https://www.figma.com/file/3ryManadSVXjYYdva3orGD/Aluratube-(Copy)?node-id=5%3A2) |
 
 ![](https://raw.githubusercontent.com/sucodelarangela/imersao-react-next/main/public/og-image.png#vitrinedev)
 
