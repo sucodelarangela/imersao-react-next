@@ -3,7 +3,7 @@ import { useState } from 'react';
 import config from '../config.json';
 import styled from 'styled-components';
 import { ThemeProvider } from 'styled-components';
-import { lightMode, darkMode } from './theme';
+import { lightMode, darkMode } from '../src/theme';
 
 import { CSSReset } from '../src/components/CSSReset';
 import Menu from '../src/components/Menu';
