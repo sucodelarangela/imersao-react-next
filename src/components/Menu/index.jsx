@@ -7,8 +7,8 @@ const StyledMenu = styled.header`
   flex-direction: row;
   height: 56px;
   justify-content: space-between;
-  background-color: ${({ theme }) => theme.backgroundLevel1 || "#FFFFFF"};
-  border: 1px solid ${({ theme }) => theme.borderBase || "#e5e5e5"};
+  background-color: ${({ theme }) => theme.backgroundLevel1};
+  border: 1px solid ${({ theme }) => theme.borderBase};
   align-items: center;
   padding: 0 16px;
   gap: 16px;
@@ -21,7 +21,7 @@ const StyledMenu = styled.header`
       max-width: 127px;
     }
     .text {
-      fill: ${({ theme }) => theme.textColorBase || "#222222"};
+      fill: ${({ theme }) => theme.textColorBase};
     }
   }
 `;
@@ -38,7 +38,6 @@ const StyledSwitch = styled(Switch.Root)`
     position: absolute;
     top: 3px;
     right: 4px;
-    z-index: -1;
   }
   &::before {
     content: '🌙';
@@ -46,11 +45,11 @@ const StyledSwitch = styled(Switch.Root)`
     top: 3px;
     left: 4px;
   }
-  /* &[data-state="checked"] {
+  &[data-state="checked"] {
       &::after {
         display: none;
       }
-    } */
+    }
 `;
 
 const StyledThumb = styled(Switch.Thumb)`
@@ -66,14 +65,19 @@ const StyledThumb = styled(Switch.Thumb)`
   }
 `;
 
-export default function Menu({ filterValue, setFilterValue }) {
+export default function Menu({ filterValue, setFilterValue, theme, setTheme }) {
+  function toggleTheme() {
+    setTheme((theme) => !theme);
+    console.log(theme);
+  }
+
   return (
     <StyledMenu>
       <div>
         <Logo />
       </div>
       <Search filterValue={filterValue} setFilterValue={setFilterValue} />
-      <StyledSwitch defaultChecked id="s1">
+      <StyledSwitch onCheckedChange={toggleTheme} >
         <StyledThumb />
       </StyledSwitch>
     </StyledMenu>
