@@ -1,33 +1,20 @@
-import Head from 'next/head';
 import { useState } from 'react';
 import config from '../config.json';
 import styled from 'styled-components';
-import { ThemeProvider } from 'styled-components';
-import { lightMode, darkMode } from '../src/theme';
-
-import { CSSReset } from '../src/components/CSSReset';
 import Menu from '../src/components/Menu';
 import { StyledTimeline } from '../src/components/Timeline';
 
 function HomePage() {
   const [filterValue, setFilterValue] = useState('');
-  const [theme, setTheme] = useState(true);
 
   return (
-    <ThemeProvider theme={theme ? lightMode : darkMode}>
-      <Head>
-        <title>AluraTube</title>
-        <meta property="og:image" content="/og-image.png" />
-      </Head>
-      <CSSReset />
-      <div>
-        <Menu filterValue={filterValue} setFilterValue={setFilterValue} theme={theme} setTheme={setTheme} />
-        <Header />
-        <Timeline searchValue={filterValue} playlists={config.playlists}>
-          Conteúdo
-        </Timeline>
-      </div>
-    </ThemeProvider >
+    <div>
+      <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
+      <Header />
+      <Timeline searchValue={filterValue} playlists={config.playlists}>
+        Conteúdo
+      </Timeline>
+    </div>
   );
 };
 
