@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import styled from "styled-components";
+import { ColorModeContext } from "./components/ColorMode";
 import Search from "./components/Search";
 import { StyledSwitch, StyledThumb } from './components/ThemeSwitch';
 
@@ -26,11 +28,8 @@ const StyledMenu = styled.header`
   }
 `;
 
-export default function Menu({ filterValue, setFilterValue, theme, setTheme }) {
-  function toggleTheme() {
-    setTheme((theme) => !theme);
-    console.log(theme);
-  }
+export default function Menu({ filterValue, setFilterValue }) {
+  const context = useContext(ColorModeContext);
 
   return (
     <StyledMenu>
@@ -38,7 +37,7 @@ export default function Menu({ filterValue, setFilterValue, theme, setTheme }) {
         <Logo />
       </div>
       <Search filterValue={filterValue} setFilterValue={setFilterValue} />
-      <StyledSwitch onCheckedChange={toggleTheme} >
+      <StyledSwitch defaultChecked onCheckedChange={context.toggleMode} >
         <StyledThumb />
       </StyledSwitch>
     </StyledMenu>

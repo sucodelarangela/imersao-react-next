@@ -1,7 +1,8 @@
 import Head from 'next/head';
 import { CSSReset } from "../src/components/CSSReset";
 import { ThemeProvider } from 'styled-components';
-// import { useState } from 'react';
+import ColorModeProvider, { ColorModeContext } from '../src/components/Menu/components/ColorMode';
+import { useContext, useState } from 'react';
 
 const theme = {
     light: {
@@ -20,11 +21,19 @@ const theme = {
     }
 };
 
+function ProviderWrapper({ children }) {
+    return (
+        <ColorModeProvider initialMode={'dark'}>
+            {children}
+        </ColorModeProvider>
+    );
+}
+
 function MyApp({ Component, pageProps }) {
-    // const [theme, setTheme] = useState(true);
+    const context = useContext(ColorModeContext);
 
     return (
-        <ThemeProvider theme={theme.light}>
+        <ThemeProvider theme={theme[context.mode]}>
             <Head>
                 <title>AluraTube</title>
                 <meta property="og:image" content="/og-image.png" />
@@ -35,4 +44,10 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default MyApp;
+export default function _App(props) {
+    return (
+        <ProviderWrapper>
+            <MyApp {...props} />
+        </ProviderWrapper>
+    );
+};

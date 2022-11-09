@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import * as Switch from '@radix-ui/react-switch';
 
 export const StyledSwitch = styled(Switch.Root)`
