@@ -2,7 +2,8 @@ import Head from 'next/head';
 import { CSSReset } from "../src/components/CSSReset";
 import { ThemeProvider } from 'styled-components';
 import ColorModeProvider, { ColorModeContext } from '../src/components/Menu/components/ColorMode';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
+import { RegisterVideo } from '../src/components/RegisterVideo';
 
 const theme = {
     light: {
@@ -40,6 +41,7 @@ function MyApp({ Component, pageProps }) {
             </Head>
             <CSSReset />
             <Component {...pageProps} />
+            <RegisterVideo />
         </ThemeProvider >
     );
 }
