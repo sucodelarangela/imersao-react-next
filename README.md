@@ -14,7 +14,7 @@ Esse projeto está sendo desenvolvido em uma imersão da [**Alura**](https://www
 | 🪧 Vitrine. Dev |     |
 | -------------- | --- |
 | ✨ Nome        | **AluraTube** |
-| 🏷️ Tecnologias | React, Next, Styled-Components, Radix UI |
+| 🏷️ Tecnologias | React, Next, Styled-Components, Radix UI, Supabase |
 | 🚀 URL         | [https://aluratube-next-js.vercel.app/](https://aluratube-next-js.vercel.app/) |
 | 🔥 Desafio     | [Design no Figma](https://www.figma.com/file/3ryManadSVXjYYdva3orGD/Aluratube-(Copy)?node-id=5%3A2) |
 
