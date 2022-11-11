@@ -11,10 +11,16 @@ function useForm(formProps) {
       const name = e.target.name;
       setValues({ ...values, [name]: value });
     },
+    handleImage() {
+      let imgUrlPattern = new RegExp('(?<=v=)(.*?)(?=&ab)');
+      let src = values.url.match(imgUrlPattern);
+      setValues({ ...values, img: src });
+    },
     clearForm() {
       setValues({
         title: '',
-        url: ''
+        url: '',
+        img: ''
       });
     }
   };
@@ -22,7 +28,7 @@ function useForm(formProps) {
 
 export const RegisterVideo = () => {
   const formRegister = useForm({
-    initialValues: { title: '', url: '' }
+    initialValues: { title: '', url: '', img: '' }
   });
   const [formIsVisible, setFormIsVisible] = useState(false);
 
@@ -54,7 +60,10 @@ export const RegisterVideo = () => {
               onChange={formRegister.handleChange}
               required
             />
+            <button type='button' className="view-thumb" onClick={formRegister.handleImage}>Ver thumbnail</button>
             <button type="submit">Cadastrar</button>
+            {formRegister.values.img ? <img src={`https://i.ytimg.com/vi/${formRegister.values.img[0]}/hqdefault.jpg`} alt="" /> : ''
+            }
           </div>
         </form>
       ) : (

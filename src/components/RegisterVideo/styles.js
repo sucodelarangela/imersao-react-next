@@ -21,7 +21,7 @@ export const StyledRegisterVideo = styled.div`
     position: absolute;
     top: 8px;
     right: 16px;
-    color: inherit;
+    color: ${({ theme }) => theme.textColorBase};
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -33,6 +33,16 @@ export const StyledRegisterVideo = styled.div`
     border-radius: 2px;
     cursor: pointer;
     color: inherit;
+    margin-bottom: 10px;
+  }
+  .view-thumb {
+    background-color: ${({ theme }) => theme.textColorBase};
+    padding: 8px 16px;
+    border: none;
+    border-radius: 2px;
+    cursor: pointer;
+    color: inherit;
+    margin-bottom: 10px;
   }
   form {
     width: 100%;
