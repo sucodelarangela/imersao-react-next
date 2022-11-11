@@ -12,8 +12,13 @@ function useForm(formProps) {
       setValues({ ...values, [name]: value });
     },
     handleImage() {
-      let imgUrlPattern = new RegExp('(?<=v=)(.*?)(?=&ab)');
-      let src = values.url.match(imgUrlPattern);
+      let src;
+      if (values.url.startsWith('https://youtu.be/')) {
+        src = values.url.split('be/')[1];
+      } else {
+        let imgUrl = values.url.split('?v=');
+        src = imgUrl[1].split('&')[0];
+      }
       setValues({ ...values, img: src });
     },
     clearForm() {
@@ -62,7 +67,7 @@ export const RegisterVideo = () => {
             />
             <button type='button' className="view-thumb" onClick={formRegister.handleImage}>Ver thumbnail</button>
             <button type="submit">Cadastrar</button>
-            {formRegister.values.img ? <img src={`https://i.ytimg.com/vi/${formRegister.values.img[0]}/hqdefault.jpg`} alt="" /> : ''
+            {formRegister.values.img ? <img src={`https://i.ytimg.com/vi/${formRegister.values.img}/hqdefault.jpg`} alt="" /> : <img src='https://t.ctcdn.com.br/8Q_WlNjbkUhra-4MBBWOIzAo0g0=/512x288/smart/filters:format(webp)/i533291.png' alt="" />
             }
           </div>
         </form>
