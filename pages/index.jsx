@@ -28,9 +28,7 @@ function HomePage() {
     <div>
       <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
       <Header />
-      <Timeline searchValue={filterValue} playlists={playlists}>
-        Conteúdo
-      </Timeline>
+      <Timeline searchValue={filterValue} playlists={playlists} />
     </div>
   );
 };
