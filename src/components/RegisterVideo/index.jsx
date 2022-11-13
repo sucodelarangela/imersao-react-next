@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { StyledRegisterVideo } from "./styles";
+import { createClient } from '@supabase/supabase-js';
 
 function useForm(formProps) {
   const [values, setValues] = useState(formProps.initialValues);
@@ -31,6 +32,11 @@ function useForm(formProps) {
   };
 };
 
+// SUPABASE CLIENT
+const PROJECT_URL = 'https://gfpeazzijxwpjymtssze.supabase.co';
+const PUBLIC_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdmcGVhenppanh3cGp5bXRzc3plIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjgyOTU2MzMsImV4cCI6MTk4Mzg3MTYzM30.AGA-9Gzh9hj01SSfL9noAxRQWLh91EoSpHkeoBn7Mko';
+const supabase = createClient(PROJECT_URL, PUBLIC_ANON_KEY);
+
 export const RegisterVideo = () => {
   const formRegister = useForm({
     initialValues: { title: '', url: '', img: '' }
@@ -44,6 +50,19 @@ export const RegisterVideo = () => {
         <form onSubmit={(e) => {
           e.preventDefault();
           // Aqui faremos o cadastro do vídeo
+          supabase.from('video').insert({
+            // o supabase converte automaticamente para json
+            title: formRegister.values.title,
+            url: formRegister.values.url,
+            thumbnail: `https://i.ytimg.com/vi/${formRegister.values.img}/hqdefault.jpg`,
+            playlist: 'Front-End (React)'
+          })
+            .then((oqueveio) => {
+              console.log(oqueveio);
+            })
+            .catch((err) => {
+              console.log(err);
+            });
           setFormIsVisible(false);
           formRegister.clearForm();
         }}>
