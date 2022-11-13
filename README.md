@@ -20,13 +20,17 @@ Esse projeto está sendo desenvolvido em uma imersão da [**Alura**](https://www
 
 ![](https://raw.githubusercontent.com/sucodelarangela/imersao-react-next/main/public/og-image.png#vitrinedev)
 
-<!-- ## Detalhes do projeto
+## Detalhes do projeto
 
 <div>
   <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-  <img src="https://img.shields.io/badge/Next-000000?style=for-the-badge&logo=nextdotjs&logoColor=ffffff"/>
+  <img src="https://img.shields.io/badge/Next-ffffff?style=for-the-badge&logo=nextdotjs&logoColor=000000"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/styled components-3C3C3C?style=for-the-badge&logo=styled-components&logoColor=DB7093">
+  <img src="https://img.shields.io/badge/supabase-1C1C1C?style=for-the-badge&logo=supabase&logoColor=3ECF8E">
 </div>
+
+<!--
 
 <div id="howto"></div>
 
