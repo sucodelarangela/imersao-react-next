@@ -1,17 +1,34 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import config from '../config.json';
 import styled from 'styled-components';
 import Menu from '../src/components/Menu';
 import { StyledTimeline } from '../src/components/Timeline';
+import { videoService } from '../src/services/videoService';
 
 function HomePage() {
+  const service = videoService();
   const [filterValue, setFilterValue] = useState('');
+  const [playlists, setPlaylists] = useState({});
+
+  useEffect(() => {
+    service.getAllVideos()
+      .then((response) => {
+        const newPlaylists = { ...playlists };
+        response.data.forEach((video) => {
+          if (!newPlaylists[video.playlist]) {
+            newPlaylists[video.playlist] = [];
+          }
+          newPlaylists[video.playlist].push(video);
+        });
+        setPlaylists(newPlaylists);
+      });
+  }, []);
 
   return (
     <div>
       <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
       <Header />
-      <Timeline searchValue={filterValue} playlists={config.playlists}>
+      <Timeline searchValue={filterValue} playlists={playlists}>
         Conteúdo
       </Timeline>
     </div>

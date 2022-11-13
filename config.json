@@ -46,48 +46,6 @@
         "thumbnail": "https://i.ytimg.com/vi/9MOJQMg6yTY/hqdefault.jpg"
       }
     ],
-    "Front-End (React)": [
-      {
-        "title": "useRef: como funciona esse React Hook | #AluraMais",
-        "url": "https://www.youtube.com/watch?v=BwRxBGsT_f0",
-        "thumbnail": "https://i.ytimg.com/vi/BwRxBGsT_f0/hqdefault.jpg"
-      },
-      {
-        "title": "Hook useCallback x useMemo: performance no React | #AluraMais",
-        "url": "https://www.youtube.com/watch?v=VVmGrEZoBvM",
-        "thumbnail": "https://i.ytimg.com/vi/VVmGrEZoBvM/hqdefault.jpg"
-      },
-      {
-        "title": "Como começar a estruturar um projeto React? com NextJS, Styled Components",
-        "url": "https://www.youtube.com/watch?v=mJK5oGixSYo",
-        "thumbnail": "https://i.ytimg.com/vi/mJK5oGixSYo/hqdefault.jpg"
-      },
-      {
-        "title": "Full Modern React Tutorial (Playlist)",
-        "url": "https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d",
-        "thumbnail": "https://i.ytimg.com/vi/j942wKiXFu8/hqdefault.jpg"
-      },
-      {
-        "title": "Se Você Passar Por Esses 5 Desafios, Você Aprendeu React JS",
-        "url": "https://www.youtube.com/watch?v=aJR7f45dBNs",
-        "thumbnail": "https://i.ytimg.com/vi/aJR7f45dBNs/hqdefault.jpg"
-      },
-      {
-        "title": "Register and Login Page Tutorial | ReactJs, NodeJS, MySQL (Beginner)",
-        "url": "https://www.youtube.com/watch?v=W-sZo6Gtx_E",
-        "thumbnail": "https://i.ytimg.com/vi/W-sZo6Gtx_E/hqdefault.jpg"
-      },
-      {
-        "title": "TUDO que você deve estudar de JavaScript antes do React",
-        "url": "https://www.youtube.com/watch?v=37SwqREHRGI",
-        "thumbnail": "https://i.ytimg.com/vi/37SwqREHRGI/hq720.jpg"
-      },
-      {
-        "title": "ViteJS vs Create React App (CRA)",
-        "url": "https://www.youtube.com/watch?v=pOf3lsHuDl4",
-        "thumbnail": "https://i.ytimg.com/vi/pOf3lsHuDl4/hq720.jpg"
-      }
-    ],
     "Aquarismo": [
       {
         "title": "Shallow Planted Aquarium - Emersed Aquascape",
