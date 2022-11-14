@@ -89,6 +89,10 @@ function Timeline({ searchValue, ...props }) {
       });
   }
 
+  useEffect(() => {
+    update();
+  }, []);
+
   supabase
     .channel('*')
     .on('postgres_changes', { event: '*', schema: '*' }, update)
