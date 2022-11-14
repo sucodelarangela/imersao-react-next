@@ -3,12 +3,13 @@ import config from '../config.json';
 import styled from 'styled-components';
 import Menu from '../src/components/Menu';
 import { StyledTimeline } from '../src/components/Timeline';
-import { videoService } from '../src/services/videoService';
+import { supabase, videoService } from '../src/services/videoService';
 
 function HomePage() {
   const service = videoService();
   const [filterValue, setFilterValue] = useState('');
   const [playlists, setPlaylists] = useState({});
+
 
   useEffect(() => {
     service.getAllVideos()
@@ -28,7 +29,9 @@ function HomePage() {
     <div>
       <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
       <Header />
-      <Timeline searchValue={filterValue} playlists={playlists} />
+      <Timeline searchValue={filterValue} playlists={playlists} setPlaylists={setPlaylists}>
+        Conteúdo
+      </Timeline>
     </div>
   );
 };
@@ -75,11 +78,25 @@ function Header() {
 
 function Timeline({ searchValue, ...props }) {
   const playlistNames = Object.keys(props.playlists);
+  const [videos, setVideos] = useState([]);
+  console.log(playlistNames);
+
+  function update() {
+    supabase.from('video')
+      .select('*')
+      .then(response => {
+        setVideos(response.data);
+      });
+  }
+
+  supabase
+    .channel('*')
+    .on('postgres_changes', { event: '*', schema: '*' }, update)
+    .subscribe();
 
   return (
     <StyledTimeline>
       {playlistNames.map((playlistName) => {
-        const videos = props.playlists[playlistName];
         return (
           <section key={playlistName}>
             <h2>{playlistName}</h2>
