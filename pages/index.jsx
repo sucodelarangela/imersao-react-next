@@ -79,7 +79,6 @@ function Header() {
 function Timeline({ searchValue, ...props }) {
   const playlistNames = Object.keys(props.playlists);
   const [videos, setVideos] = useState([]);
-  console.log(playlistNames);
 
   function update() {
     supabase.from('video')
