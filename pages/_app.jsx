@@ -4,23 +4,7 @@ import { ThemeProvider } from 'styled-components';
 import ColorModeProvider, { ColorModeContext } from '../src/components/Menu/components/ColorMode';
 import { useContext } from 'react';
 import { RegisterVideo } from '../src/components/RegisterVideo';
-
-const theme = {
-    light: {
-        backgroundBase: '#f9f9f9',
-        backgroundLevel1: '#ffffff',
-        backgroundLevel2: '#f0f0f0',
-        borderBase: '#e5e5e5',
-        textColorBase: '#222222'
-    },
-    dark: {
-        backgroundBase: '#181818',
-        backgroundLevel1: '#202020',
-        backgroundLevel2: '#313131',
-        borderBase: '#383838',
-        textColorBase: '#ffffff'
-    }
-};
+import { theme } from '../src/common/themes';
 
 function ProviderWrapper({ children }) {
     return (
@@ -28,7 +12,7 @@ function ProviderWrapper({ children }) {
             {children}
         </ColorModeProvider>
     );
-}
+};
 
 function MyApp({ Component, pageProps }) {
     const context = useContext(ColorModeContext);
