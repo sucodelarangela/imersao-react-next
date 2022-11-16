@@ -1,8 +1,10 @@
-import { useContext } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { ColorModeContext } from "./components/ColorMode";
 import Search from "./components/Search";
+import { StyledContent, StyledViewport, StyledTrigger, StyledItem } from "./components/ThemeSelect";
 import { StyledSwitch, StyledThumb } from './components/ThemeSwitch';
+import * as Select from '@radix-ui/react-select';
 
 const StyledMenu = styled.header`
   display: flex;
@@ -30,6 +32,7 @@ const StyledMenu = styled.header`
 
 export default function Menu({ filterValue, setFilterValue }) {
   const context = useContext(ColorModeContext);
+  const [value, setValue] = useState(context.mode);
 
   return (
     <StyledMenu>
@@ -37,12 +40,40 @@ export default function Menu({ filterValue, setFilterValue }) {
         <Logo />
       </div>
       <Search filterValue={filterValue} setFilterValue={setFilterValue} />
-      <StyledSwitch defaultChecked onCheckedChange={context.toggleMode} >
+      <Select.Root name="colorMode" value={value} onValueChange={(e) => console.log(this.value)}>
+        <StyledTrigger aria-label="Tema">
+          <Select.Value placeholder={context.mode.toUpperCase()} />
+        </StyledTrigger>
+        <Select.Portal>
+          <StyledContent>
+            <StyledViewport>
+              <Select.Group>
+                <SelectItem value="light">Light</SelectItem>
+                <SelectItem value="dark">Dark</SelectItem>
+                <SelectItem value="warm">Warm</SelectItem>
+                <SelectItem value="cold">Cold</SelectItem>
+                <SelectItem value="vintage">Vintage</SelectItem>
+                <SelectItem value="red">Red</SelectItem>
+              </Select.Group>
+            </StyledViewport>
+          </StyledContent>
+        </Select.Portal>
+      </Select.Root>
+      {/* <StyledSwitch defaultChecked onCheckedChange={context.toggleMode} >
         <StyledThumb />
-      </StyledSwitch>
-    </StyledMenu>
+      </StyledSwitch> */}
+    </StyledMenu >
   );
 }
+
+const SelectItem = React.forwardRef(({ children, className, ...props }, forwardedRef) => {
+  return (
+    <StyledItem {...props} ref={forwardedRef}>
+      <Select.ItemText>{children}</Select.ItemText>
+    </StyledItem>
+  );
+});
+
 
 function Logo() {
   return (

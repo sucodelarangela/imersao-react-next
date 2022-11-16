@@ -29,8 +29,8 @@ export default function ColorModeProvider({ children, initialMode }) {
 
     const [modes, dispatchModes] = useReducer(colorModeReducer, initialMode);
 
-    function toggleMode() {
-        mode === 'dark' ? dispatchModes({ type: 'red' }) : dispatchModes({ type: 'dark' });
+    function toggleMode(mode) {
+        dispatchModes({ type: mode });
     }
 
     return (
