@@ -21,7 +21,7 @@ export default function ColorModeProvider({ children, initialMode }) {
             case 'vintage':
                 return setMode('vintage');
             case 'red':
-                return setMode('vibrant');
+                return setMode('red');
             default:
                 return state;
         }

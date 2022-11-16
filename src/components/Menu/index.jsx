@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import { ColorModeContext } from "./components/ColorMode";
 import Search from "./components/Search";
 import { StyledContent, StyledViewport, StyledTrigger, StyledItem } from "./components/ThemeSelect";
-import { StyledSwitch, StyledThumb } from './components/ThemeSwitch';
 import * as Select from '@radix-ui/react-select';
 
 const StyledMenu = styled.header`
@@ -34,13 +33,17 @@ export default function Menu({ filterValue, setFilterValue }) {
   const context = useContext(ColorModeContext);
   const [value, setValue] = useState(context.mode);
 
+  useEffect(() => {
+    context.toggleMode(value);
+  }, [value]);
+
   return (
     <StyledMenu>
       <div>
         <Logo />
       </div>
       <Search filterValue={filterValue} setFilterValue={setFilterValue} />
-      <Select.Root name="colorMode" value={value} onValueChange={(e) => console.log(this.value)}>
+      <Select.Root name="colorMode" value={value} onValueChange={setValue}>
         <StyledTrigger aria-label="Tema">
           <Select.Value placeholder={context.mode.toUpperCase()} />
         </StyledTrigger>
@@ -59,9 +62,6 @@ export default function Menu({ filterValue, setFilterValue }) {
           </StyledContent>
         </Select.Portal>
       </Select.Root>
-      {/* <StyledSwitch defaultChecked onCheckedChange={context.toggleMode} >
-        <StyledThumb />
-      </StyledSwitch> */}
     </StyledMenu >
   );
 }
