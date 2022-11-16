@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import Menu from '../src/components/Menu';
 import { StyledTimeline } from '../src/components/Timeline';
 import { supabase, videoService } from '../src/services/videoService';
-import { TrashIcon } from '@radix-ui/react-icons';
 import { DeleteButton } from '../src/components/Alert';
+import { Footer } from '../src/components/Footer';
 
 function HomePage() {
   const service = videoService();
@@ -45,6 +45,11 @@ const StyledHeader = styled.header`
     width: 100%;
     padding: 16px 32px;
     gap: 16px;
+    & > div {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
     & .user-avatar {
       width: 80px;
       height: 80px;
@@ -64,12 +69,12 @@ function Header() {
   return (
     <StyledHeader>
       <StyledBanner />
-      {/* <img className='banner' src="/banner.png" alt="" aria-hidden='true' /> */}
       <section className='user-info'>
         <img className="user-avatar" src={`https://github.com/${config.github}.png`} alt="Avatar Angela Caldas" />
         <div>
           <h2>{config.name}</h2>
           <p>{config.job}</p>
+          <Footer />
         </div>
       </section>
     </StyledHeader>
@@ -125,9 +130,6 @@ function Timeline({ searchValue, ...props }) {
                           </span>
                         </a>
                         <DeleteButton handleDelete={() => handleDelete(video.id)} />
-                        {/* <button aria-label='Deletar vídeo'>
-                        <TrashIcon />
-                      </button> */}
                       </div >
                     );
                   }

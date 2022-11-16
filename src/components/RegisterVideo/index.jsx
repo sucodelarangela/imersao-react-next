@@ -41,7 +41,7 @@ export const RegisterVideo = () => {
   const formRegister = useForm({
     initialValues: { title: '', url: '', img: '', playlist: '' }
   });
-  const [formIsVisible, setFormIsVisible] = useState(true);
+  const [formIsVisible, setFormIsVisible] = useState(false);
 
   return (
     <StyledRegisterVideo>
