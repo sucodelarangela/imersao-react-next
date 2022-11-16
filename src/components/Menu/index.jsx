@@ -51,8 +51,8 @@ export default function Menu({ filterValue, setFilterValue }) {
           <StyledContent>
             <StyledViewport>
               <Select.Group>
-                <SelectItem value="light">Light</SelectItem>
                 <SelectItem value="dark">Dark</SelectItem>
+                <SelectItem value="light">Light</SelectItem>
                 <SelectItem value="warm">Warm</SelectItem>
                 <SelectItem value="cold">Cold</SelectItem>
                 <SelectItem value="vintage">Vintage</SelectItem>

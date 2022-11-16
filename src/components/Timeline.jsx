@@ -25,8 +25,7 @@ export const StyledTimeline = styled.div`
     padding: 0;
     overflow: hidden;
     padding: 16px;
-    div {
-      
+    .video-container {
       width: calc(100vw - 16px * 4);
       display: grid;
       grid-gap: 16px;
@@ -35,6 +34,9 @@ export const StyledTimeline = styled.div`
       grid-auto-columns: minmax(200px,1fr);
       overflow-x: scroll;
       scroll-snap-type: x mandatory;
+      div {
+        position: relative;
+      }
       a {
         scroll-snap-align: start;
         span {
@@ -43,6 +45,16 @@ export const StyledTimeline = styled.div`
           padding-right: 24px;
           color: ${({ theme }) => theme.textColorBase};
         }
+      }
+      button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: ${({ theme }) => theme.textColorBase};
+        background-color: red;
+        width: 24px;
+        height: 24px;
+        border: none;
       }
     }
   }

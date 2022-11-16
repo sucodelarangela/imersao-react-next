@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Menu from '../src/components/Menu';
 import { StyledTimeline } from '../src/components/Timeline';
 import { supabase, videoService } from '../src/services/videoService';
+import { TrashIcon } from '@radix-ui/react-icons';
 
 function HomePage() {
   const service = videoService();
@@ -29,9 +30,7 @@ function HomePage() {
     <div>
       <Menu filterValue={filterValue} setFilterValue={setFilterValue} />
       <Header />
-      <Timeline searchValue={filterValue} playlists={playlists} setPlaylists={setPlaylists}>
-        Conteúdo
-      </Timeline>
+      <Timeline searchValue={filterValue} playlists={playlists} setPlaylists={setPlaylists} />
     </div>
   );
 };
@@ -103,7 +102,7 @@ function Timeline({ searchValue, ...props }) {
         return (
           <section key={playlistName}>
             <h2>{playlistName}</h2>
-            <div>
+            <div className='video-container'>
               {
                 videos.filter((video) => {
                   const titleNormalized = video.title.toLowerCase();
@@ -111,12 +110,17 @@ function Timeline({ searchValue, ...props }) {
                   return titleNormalized.includes(searchValueNormalized);
                 }).map(video => {
                   return (
-                    <a href={video.url} key={video.title} target="_blank">
-                      <img src={video.thumbnail} />
-                      <span>
-                        {video.title}
-                      </span>
-                    </a>
+                    <div key={video.title} >
+                      <a href={video.url} target="_blank">
+                        <img src={video.thumbnail} />
+                        <span>
+                          {video.title}
+                        </span>
+                      </a>
+                      <button aria-label='Deletar vídeo'>
+                        <TrashIcon />
+                      </button>
+                    </div >
                   );
                 })}
             </div>
