@@ -5,6 +5,7 @@ import Menu from '../src/components/Menu';
 import { StyledTimeline } from '../src/components/Timeline';
 import { supabase, videoService } from '../src/services/videoService';
 import { TrashIcon } from '@radix-ui/react-icons';
+import { DeleteButton } from '../src/components/Alert';
 
 function HomePage() {
   const service = videoService();
@@ -96,6 +97,10 @@ function Timeline({ searchValue, ...props }) {
     .on('postgres_changes', { event: '*', schema: '*' }, update)
     .subscribe();
 
+  function handleDelete() {
+    console.log('clicou');
+  }
+
   return (
     <StyledTimeline>
       {playlistNames.map((playlistName) => {
@@ -117,9 +122,10 @@ function Timeline({ searchValue, ...props }) {
                           {video.title}
                         </span>
                       </a>
-                      <button aria-label='Deletar vídeo'>
+                      <DeleteButton handleDelete={handleDelete} />
+                      {/* <button aria-label='Deletar vídeo'>
                         <TrashIcon />
-                      </button>
+                      </button> */}
                     </div >
                   );
                 })}

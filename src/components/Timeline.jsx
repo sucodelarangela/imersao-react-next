@@ -50,7 +50,7 @@ export const StyledTimeline = styled.div`
         position: absolute;
         top: 0;
         right: 0;
-        color: ${({ theme }) => theme.textColorBase};
+        color: #ffffff;
         background-color: red;
         width: 24px;
         height: 24px;
