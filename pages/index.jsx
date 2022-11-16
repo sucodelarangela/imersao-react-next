@@ -79,6 +79,7 @@ function Header() {
 function Timeline({ searchValue, ...props }) {
   const playlistNames = Object.keys(props.playlists);
   const [videos, setVideos] = useState([]);
+  const service = videoService();
 
   function update() {
     supabase.from('video')
@@ -92,14 +93,14 @@ function Timeline({ searchValue, ...props }) {
     update();
   }, []);
 
+  function handleDelete(id) {
+    service.deleteVideo(id);
+  }
+
   supabase
     .channel('*')
     .on('postgres_changes', { event: '*', schema: '*' }, update)
     .subscribe();
-
-  function handleDelete() {
-    console.log('clicou');
-  }
 
   return (
     <StyledTimeline>
@@ -122,7 +123,7 @@ function Timeline({ searchValue, ...props }) {
                           {video.title}
                         </span>
                       </a>
-                      <DeleteButton handleDelete={handleDelete} />
+                      <DeleteButton handleDelete={() => handleDelete(video.id)} />
                       {/* <button aria-label='Deletar vídeo'>
                         <TrashIcon />
                       </button> */}

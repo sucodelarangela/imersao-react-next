@@ -11,6 +11,12 @@ export function videoService() {
     getAllVideos() {
       return supabase.from('video')
         .select('*'); // * select all
+    },
+    async deleteVideo(id) {
+      await supabase.from('video')
+        .delete()
+        .eq('id', id);
+      console.log(id);
     }
   };
 }
