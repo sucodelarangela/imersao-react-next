@@ -115,20 +115,22 @@ function Timeline({ searchValue, ...props }) {
                   const searchValueNormalized = searchValue.toLowerCase();
                   return titleNormalized.includes(searchValueNormalized);
                 }).map(video => {
-                  return (
-                    <div key={video.title} >
-                      <a href={video.url} target="_blank">
-                        <img src={video.thumbnail} />
-                        <span>
-                          {video.title}
-                        </span>
-                      </a>
-                      <DeleteButton handleDelete={() => handleDelete(video.id)} />
-                      {/* <button aria-label='Deletar vídeo'>
+                  if (video.playlist === playlistName) {
+                    return (
+                      <div key={video.title} >
+                        <a href={video.url} target="_blank">
+                          <img src={video.thumbnail} />
+                          <span>
+                            {video.title}
+                          </span>
+                        </a>
+                        <DeleteButton handleDelete={() => handleDelete(video.id)} />
+                        {/* <button aria-label='Deletar vídeo'>
                         <TrashIcon />
                       </button> */}
-                    </div >
-                  );
+                      </div >
+                    );
+                  }
                 })}
             </div>
           </section>

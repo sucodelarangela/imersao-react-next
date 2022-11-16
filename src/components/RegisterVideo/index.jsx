@@ -39,9 +39,9 @@ const supabase = createClient(PROJECT_URL, PUBLIC_ANON_KEY);
 
 export const RegisterVideo = () => {
   const formRegister = useForm({
-    initialValues: { title: '', url: '', img: '' }
+    initialValues: { title: '', url: '', img: '', playlist: '' }
   });
-  const [formIsVisible, setFormIsVisible] = useState(false);
+  const [formIsVisible, setFormIsVisible] = useState(true);
 
   return (
     <StyledRegisterVideo>
@@ -55,7 +55,7 @@ export const RegisterVideo = () => {
             title: formRegister.values.title,
             url: formRegister.values.url,
             thumbnail: `https://i.ytimg.com/vi/${formRegister.values.img}/hqdefault.jpg`,
-            playlist: 'Front-End (React)'
+            playlist: formRegister.values.playlist
           })
             .then((oqueveio) => {
               console.log(oqueveio);
@@ -76,6 +76,12 @@ export const RegisterVideo = () => {
               onChange={formRegister.handleChange}
               required
             />
+            <select name="playlist" onChange={formRegister.handleChange} required>
+              <option value="" disabled>Playlists</option>
+              <option value="Front-End (React)">Front-End (React)</option>
+              <option value="Meu canal - Xcom: Enemy Unknown">Xcom: Enemy Unknown</option>
+              <option value="Aquarismo">Aquarismo</option>
+            </select>
             <input
               type="text"
               placeholder="URL"
